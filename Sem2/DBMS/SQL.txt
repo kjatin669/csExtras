@@ -9,7 +9,7 @@ The DROP DATABASE statement is used to drop an existing SQL database.
 
 Syntax
 DROP DATABASE databasename;
-The SQL CREATE TABLE Statement
++--The SQL CREATE TABLE Statement
 The CREATE TABLE statement is used to create a new table in a database.
 
 Syntax
