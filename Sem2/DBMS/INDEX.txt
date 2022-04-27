@@ -1,0 +1,8 @@
+1. Downloading and Installing of my sql 
+2. Perform: Viewing all databases, create database, viewing all tables, create and Insert records in the table
+3. Perform DDL commands: Drop, Alter, Rename and Truncate
+4. Perform string & maths functions on the employee table
+5. Perform Between, LIKE and WHERE clause on the employee table
+6. Perform Aggregate function: SUM(), MIN(), MAX(), COUNT(), AVG()
+7. Perform the Following: Creating, Displaying & Droping a View
+8. Perform DCL statements (GRANT & REVOKE)

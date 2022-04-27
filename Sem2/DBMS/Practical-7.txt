@@ -1,0 +1,118 @@
+PRACTICAL 5:
+
+CREATE DATABASE company1;
+USE company1;
+CREATE TABLE employee(
+eID INT,
+eName VARCHAR(10),
+eSalary INT
+);
+INSERT INTO employee
+VALUES(101, 'ABC', 9300),
+(102, 'DEF', 21200),
+(103, 'GHI', 13500),
+(104, 'JKL', 19400),
+(105, 'MNO', 4400)
+;
+SELECT * FROM employee;
+SELECT * FROM employee
+WHERE eSalary > 5000;
+SELECT eSalary FROM employee
+WHERE eSalary BETWEEN 10000 AND 20000;
+SELECT eSalary FROM employee
+WHERE eName LIKE 'A%';
+
+
+Practical 6:
+
+CREATE DATABASE company3;
+USE company3;
+CREATE TABLE employee(
+eID INT,
+eName VARCHAR(10),
+eDept VARCHAR(10),
+eSalary INT
+);
+INSERT INTO employee
+VALUES(101, 'ABC', 'BSc. CS', 9400),
+(102, 'DEF', 'BSc. IT', 5800),
+(103, 'GHI', 'BSc. PCM', 6700),
+(104, 'JKL', 'BSc. IT', 4500),
+(105, 'MNO', 'BSc. CS', 7400)
+;
+
+SELECT COUNT(eID) FROM employee;
+SELECT MIN(eSalary) FROM employee;
+SELECT MAX(eSalary) FROM employee;
+SELECT SUM(eSalary) FROM employee;
+SELECT AVG(eSalary) FROM employee;
+
+
+PRACTICAL 7:
+
+CREATE DATABASE student;
+USE student;
+CREATE TABLE student_details(
+stu_id INT,
+name VARCHAR(10),
+address VARCHAR(30)
+);
+
+CREATE TABLE student_marks(
+stu_id INT,
+name VARCHAR(10),
+marks INT,
+age INT
+);
+
+INSERT INTO student_details
+VALUES(1, 'ABC', 'Mumbai'),
+(2, 'DEF', 'Delhi'),
+(3, 'GHI', 'Banglore'),
+(4, 'JKL', 'Kolkata')
+;
+INSERT INTO student_marks
+VALUES(1, 'ABC', 47, 19),
+(2, 'DEF', 86, 20),
+(3, 'GHI', 74, 19),
+(4, 'JKL', 90, 21)
+;
+
+CREATE VIEW mark_view AS 
+SELECT sd.name, sd.address, sm.marks
+FROM student_details sd, student_marks sm
+WHERE sd.stu_id = sm.stu_id;
+
+SELECT * FROM mark_view;
+
+DROP VIEW mark_view;
+
+PRACTICAL 8:
+
+CREATE DATABASE company3;
+USE company3;
+CREATE TABLE employee(
+eID INT,
+eName VARCHAR(10),
+eDept VARCHAR(10),
+eSalary INT
+);
+INSERT INTO employee
+VALUES(101, 'ABC', 'BSc. CS', 9400),
+(102, 'DEF', 'BSc. IT', 5800),
+(103, 'GHI', 'BSc. PCM', 6700),
+(104, 'JKL', 'BSc. IT', 4500),
+(105, 'MNO', 'BSc. CS', 7400)
+;
+
+CREATE USER user1@localhost;
+
+SELECT user FROM mysql.user;
+
+GRANT UPDATE, DELETE 
+ON employee
+TO user1@localhost;
+REVOKE DELETE 
+ON employee
+FROM user1@localhost;
+
